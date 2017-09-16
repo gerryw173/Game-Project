@@ -65,6 +65,7 @@ public class Consumables
         manaPot = pot;
     }
 
+    // 20 out of 100 chance to loot a healthpot
     public void lootPot()
     {
         Random randy = new Random();
