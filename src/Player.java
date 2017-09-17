@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by 1137399 on 8/11/2017.
  */
@@ -107,6 +109,48 @@ public class Player
     public void setXp(int xp)
     {
         this.xp = xp;
+    }
+
+    public void levelUp()
+    {
+        Scanner input = new Scanner(System.in)
+        if(xp >= 100)
+        {
+            System.out.println("You leveled up!");
+            System.out.println("Please choose a stat to level up.");
+            System.out.println("1. HP + 5");
+            System.out.println("2. DEF + 1");
+            System.out.println("3. ATK + 1");
+            System.out.println("4. INT + 1");
+
+            int choice = input.nextInt();
+
+            while(choice < 1 || choice > 4)
+            {
+                System.out.print("Invalid input, please try again: ");
+                choice = input.nextInt();
+            }
+
+            if(choice == 1)
+            {
+                setHP(getHP() + 1);
+            }
+
+            if(choice == 2)
+            {
+                setDEF(getDEF() + 1);
+            }
+
+            if(choice == 3)
+            {
+                setATK(getATK() + 1);
+            }
+
+            if(choice == 4)
+            {
+                setINT(getINT() + 1);
+            }
+        }
     }
 
     public int getSword()
