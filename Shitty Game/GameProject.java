@@ -7,11 +7,11 @@ public class GameProject
 	public static void main(String[] args) throws Exception
 	{
 		Scanner input = new Scanner(System.in);
-      Random randy = new Random();
+      		Random randy = new Random();
       
-      boolean game = true; 
+      		boolean game = true; 
 		
-      // Player stats
+      		// Player stats
 		int playerHP = 0; // HP 
 		int maxPlayerHP = 0; // Max HP
 		int playerAttack = 0; // Damage
@@ -20,33 +20,33 @@ public class GameProject
 		int xp = 0;
 		
 		// Potions
-      int potionHeal = 20;
-      int numHealthPots = 3;
+     		int potionHeal = 20;
+      		int numHealthPots = 3;
       
-      int potionDropChance = 15;
+      		int potionDropChance = 15;
       
-      int potionAttackValue = 5;
-      int potionAttack = 5;
-      int numAttackPots = 1;
+      		int potionAttackValue = 5;
+      		int potionAttack = 5;
+      		int numAttackPots = 1;
       
-      int potionDefenseValue = 5;
-      int potionDefense = 5;
-      int numDefensePots = 1;
+      		int potionDefenseValue = 5;
+      		int potionDefense = 5;
+      		int numDefensePots = 1;
 
 		//Monsterstats
-      int monsterHP = 0;
+      		int monsterHP = 0;
 		int monsterATK = 0;
 		int monsterDF = 0;
 		int monsterLUCK = 0;
 		int xpGain = 0;
       
 		//Enemy types
-      String[] easyEnemies = {"skeleton", "zombie", "bat"};      
+      		String[] easyEnemies = {"skeleton", "zombie", "bat"};      
     
 		printWithDelays("Welcome traveler.", TimeUnit.MILLISECONDS, 20);
-      System.out.println(" ");
-      printWithDelays("Before we may begin you must first choose your background", TimeUnit.MILLISECONDS, 20);
-      System.out.println(" ");
+      		System.out.println(" ");
+      		printWithDelays("Before we may begin you must first choose your background", TimeUnit.MILLISECONDS, 20);
+      		System.out.println(" ");
 		
 		System.out.println("1. A noble (Recommended)" );
 		System.out.println("2. A warrior (Recommended)");
@@ -108,97 +108,97 @@ public class GameProject
 		printWithDelays("You arrive at the entrance of the dungeon.", TimeUnit.MILLISECONDS, 20);
 		System.out.println(" ");
       
-	   int count = 0;
+	   	int count = 0;
    
-      boolean combat = true; // while fighting
+      		boolean combat = true; // while fighting
 
 		while(game) // first stage
 		{  
-         String enemy = easyEnemies[randy.nextInt(easyEnemies.length)];
-         printWithDelays("You enter the next room and spot a " + enemy + ".", TimeUnit.MILLISECONDS, 20);
-         System.out.println(" ");
+         	String enemy = easyEnemies[randy.nextInt(easyEnemies.length)];
+         	printWithDelays("You enter the next room and spot a " + enemy + ".", TimeUnit.MILLISECONDS, 20);
+         	System.out.println(" ");
 			
-         // monster stats           
-         monsterHP = randy.nextInt(31) + 15;
-         monsterATK = randy.nextInt(26) + 15;
-         monsterDF = randy.nextInt(11) + 1;
-         monsterLUCK = randy.nextInt(26) + 5;
-			xpGain = randy.nextInt(21) + 5;
+         	// monster stats           
+         	monsterHP = randy.nextInt(31) + 15;
+         	monsterATK = randy.nextInt(26) + 15;
+         	monsterDF = randy.nextInt(11) + 1;
+         	monsterLUCK = randy.nextInt(26) + 5;
+		xpGain = randy.nextInt(21) + 5;
 			
-			// buff booleans
+		// buff booleans
 			
-			boolean atkPot = false;
-			boolean defPot = false;
-			boolean atkPotStop = false; // End of buff
-			boolean defPotStop = false; 
+		boolean atkPot = false;
+		boolean defPot = false;
+		boolean atkPotStop = false; // End of buff
+		boolean defPotStop = false; 
             
-		   while(combat)
-         {  
-				// Conditions for buffs
-				if(atkPot == true) // attack buff
-				{
-					playerAttack += 5; 
+		while(combat)
+         	{  
+			// Conditions for buffs
+			if(atkPot == true) // attack buff
+			{
+				playerAttack += 5; 
 					
-					atkPot = false;
-					atkPotStop = true;
-				}
+				atkPot = false;
+				atkPotStop = true;
+			}
 				
-				if(defPot == true) // defense buff
-				{
-					playerDefense += 5; 
+			if(defPot == true) // defense buff
+			{
+				playerDefense += 5; 
 					
-					defPot = false;
-					defPotStop = true;
-				}
+				defPot = false;
+				defPotStop = true;
+			}
 
 				        
-            System.out.println("What will you do?");
+            	System.out.println("What will you do?");
             
-            System.out.println("Your HP:" + playerHP);
-            System.out.println("Enemy HP:" + monsterHP);
+            	System.out.println("Your HP:" + playerHP);
+            	System.out.println("Enemy HP:" + monsterHP);
 
-			   System.out.println("1. Attack");
-			   System.out.println("2. Items");
+		System.out.println("1. Attack");
+		System.out.println("2. Items");
          
-			   int choice = input.nextInt(); // choice
+		int choice = input.nextInt(); // choice
          
-            if(choice < 1 || choice > 2)
-            {
-               System.out.println("Please choose a valid input.");
-            }
+            	if(choice < 1 || choice > 2)
+            	{
+               		System.out.println("Please choose a valid input.");
+            	}
 			
-   	      if(choice == 1) // Attack
-   	      {  
-					// player deals damage             
-               monsterHP = playerCalculateDamage(playerAttack, playerDefense , playerLuck, playerHP, monsterATK, monsterDF, monsterLUCK, monsterHP);
+   	      	if(choice == 1) // Attack
+   	      	{  
+		// player deals damage             
+               	monsterHP = playerCalculateDamage(playerAttack, playerDefense , playerLuck, playerHP, monsterATK, monsterDF, monsterLUCK, monsterHP);
                
-               if(monsterHP <= 0) // Monster defeated
-               {
-						// Buffs end
-						if(atkPotStop == true)
-						{
-							atkPotStop = false;
-							playerAttack -= 5;
-						}
+               	if(monsterHP <= 0) // Monster defeated
+               	{
+			// Buffs end
+			if(atkPotStop == true)
+			{
+				atkPotStop = false;
+				playerAttack -= 5;
+			}
 						
-						if(defPotStop == true)
-						{
-							defPotStop = false;
-							playerDefense -= 5;
-						}
+			if(defPotStop == true)
+			{
+				defPotStop = false;
+				playerDefense -= 5;
+			}
 						
-						xp += xpGain;
+			xp += xpGain;
 						
-                  printWithDelays("You defeated the " + enemy + ".", TimeUnit.MILLISECONDS, 20);
-                  System.out.println(" ");
-						printWithDelays("You gained " + xpGain + " exp.", TimeUnit.MILLISECONDS, 20);
-						System.out.println(" ");
+                  	printWithDelays("You defeated the " + enemy + ".", TimeUnit.MILLISECONDS, 20);
+                  	System.out.println(" ");
+			printWithDelays("You gained " + xpGain + " exp.", TimeUnit.MILLISECONDS, 20);
+			System.out.println(" ");
 						
-                  // Dropped pots
-                  int potionDrop = randy.nextInt(101);
+                  	// Dropped pots
+                  	int potionDrop = randy.nextInt(101);
                   
-                  if(potionDrop <= potionDropChance)
-                  {
+                  	if(potionDrop <= potionDropChance)
+                  	{
                      int num = randy.nextInt(3) + 1;
                      
                      if(num == 1)
