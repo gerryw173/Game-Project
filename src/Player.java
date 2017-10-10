@@ -113,7 +113,7 @@ public class Player
 
     public void levelUp()
     {
-        Scanner input = new Scanner(System.in)
+        Scanner input = new Scanner(System.in);
         if(xp >= 100)
         {
             System.out.println("You leveled up!");
@@ -133,23 +133,35 @@ public class Player
 
             if(choice == 1)
             {
-                setHP(getHP() + 1);
+                setHP(getHP() + 5);
+                System.out.println("HP increased by 5");
             }
 
             if(choice == 2)
             {
                 setDEF(getDEF() + 1);
+                System.out.println("DEF increased by 1");
             }
 
             if(choice == 3)
             {
                 setATK(getATK() + 1);
+                System.out.println("ATK increased by 1");
             }
 
             if(choice == 4)
             {
                 setINT(getINT() + 1);
+                System.out.println("INT increased by 1");
             }
+
+            xp -= 100;
+
+        }
+
+        else
+        {
+            System.out.println("Fix this shit yo");
         }
     }
 
