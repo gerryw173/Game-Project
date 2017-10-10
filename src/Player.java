@@ -137,19 +137,19 @@ public class Player
                 System.out.println("HP increased by 5");
             }
 
-            if(choice == 2)
+            else if(choice == 2)
             {
                 setDEF(getDEF() + 1);
                 System.out.println("DEF increased by 1");
             }
 
-            if(choice == 3)
+            else if(choice == 3)
             {
                 setATK(getATK() + 1);
                 System.out.println("ATK increased by 1");
             }
 
-            if(choice == 4)
+            else if(choice == 4)
             {
                 setINT(getINT() + 1);
                 System.out.println("INT increased by 1");
