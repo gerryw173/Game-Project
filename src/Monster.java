@@ -1,6 +1,9 @@
 /**
  * Created by 1137399 on 8/15/2017.
  */
+
+import java.util.Random;
+
 public class Monster
 {
     private int monsterHP;
@@ -9,6 +12,7 @@ public class Monster
     private int monsterINT;
     private int monsterMagicDamage;
     private int monsterMana;
+    private int loot;
 
     public Monster()
     {
@@ -18,6 +22,16 @@ public class Monster
         monsterINT = 0;
         monsterMagicDamage = 0;
         monsterMana = 0;
+        loot = 10;
+    }
+
+    public Monster(int HP, int DEF, int ATK, int loot)
+    {
+        Random randy = new Random();
+        HP = randy.nextInt(21) + 10;
+        DEF = randy.nextInt(6) + 1;
+        ATK = randy.nextInt(11) + 1;
+        loot = randy.nextInt(51);
     }
 
     public int getMonsterHP()
@@ -78,5 +92,10 @@ public class Monster
     public void setMonsterMana(int monsterMana)
     {
         this.monsterMana = monsterMana;
+    }
+
+    public int getMonsterLoot()
+    {
+        return loot;
     }
 }

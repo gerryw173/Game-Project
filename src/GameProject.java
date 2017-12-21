@@ -89,7 +89,7 @@ public class GameProject
      */
     public static int calculatePlayerDamage(int playerATK, int sword, int monsterHP, int monsterDEF)
     {
-        int playerDamage = playerATK - monsterDEF;
+        int playerDamage = (playerATK + sword) - monsterDEF;
         if(playerDamage < 0)
         {
             playerDamage = 0;
