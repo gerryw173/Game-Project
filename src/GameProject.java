@@ -73,10 +73,12 @@ public class GameProject
             player.setINT(6);
         }
 
-        System.out.println("asdasdasd");
+        System.out.println(player);
 
+        while(game)
+        {
 
-
+        }
     }
 
     /**
@@ -87,7 +89,7 @@ public class GameProject
      * @param monsterDEF
      * @return monster's hp
      */
-    public static int calculatePlayerDamage(int playerATK, int sword, int monsterHP, int monsterDEF)
+    private static int calculatePlayerDamage(int playerATK, int sword, int monsterHP, int monsterDEF)
     {
         int playerDamage = (playerATK + sword) - monsterDEF;
         if(playerDamage < 0)
@@ -106,7 +108,7 @@ public class GameProject
      * @param monsterATK
      * @return player hp
      */
-    public static int calculateMonsterDamage(int HP, int DEF, int shield, int monsterATK)
+    private static int calculateMonsterDamage(int HP, int DEF, int shield, int monsterATK)
     {
         int monsterDamage = monsterATK - (DEF + shield);
         if(monsterDamage < 0)
@@ -116,5 +118,4 @@ public class GameProject
         HP -= monsterDamage;
         return HP;
     }
-
 }

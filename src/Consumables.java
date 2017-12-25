@@ -9,6 +9,7 @@ public class Consumables
     private int healthPot;
     private int healthPotChance;
     private int manaPot;
+    private boolean ifBuff;
     //private int manaPotChance;
 
     public Consumables() // starting items
@@ -78,6 +79,35 @@ public class Consumables
         }
 
     }
+
+    public boolean ifBuff()
+    {
+        return ifBuff;
+    }
+
+    // turns buff on or off depending on previous status
+    // if false then set to true and vice versa
+    public void switchBuffStatus()
+    {
+
+        boolean start = ifBuff;
+
+        if(ifBuff == true)
+        {
+            ifBuff = false;
+        }
+
+        else
+        {
+            ifBuff = true;
+        }
+
+        boolean end = ifBuff;
+
+        System.out.println("Status switched from " + start + " to " + end);
+
+    }
+
     public String showPot()
     {
         String a = "Health Potions: " + healthPot + "\n" +
