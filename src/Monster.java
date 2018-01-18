@@ -16,21 +16,10 @@ public class Monster
 
     public Monster()
     {
-        monsterHP = 10;
-        monsterDEF = 5;
-        monsterATK = 5;
-        monsterINT = 0;
-        monsterMagicDamage = 0;
-        monsterMana = 0;
-        loot = 10;
-    }
-
-    public Monster(int HP, int DEF, int ATK, int loot)
-    {
         Random randy = new Random();
-        HP = randy.nextInt(21) + 10;
-        DEF = randy.nextInt(6) + 1;
-        ATK = randy.nextInt(11) + 1;
+        monsterHP = randy.nextInt(21) + 10;
+        monsterDEF = randy.nextInt(6) + 1;
+        monsterATK = randy.nextInt(11) + 1;
         loot = randy.nextInt(51);
     }
 

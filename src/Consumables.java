@@ -85,6 +85,11 @@ public class Consumables
         return ifBuff;
     }
 
+    public void setBuff(boolean status)
+    {
+        ifBuff = status;
+    }
+
     // turns buff on or off depending on previous status
     // if false then set to true and vice versa
     public void switchBuffStatus()

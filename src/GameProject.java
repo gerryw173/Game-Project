@@ -38,7 +38,7 @@ public class GameProject
 
         Scanner input = new Scanner(System.in);
         Player player = new Player();
-        Consumables consums = new Consumables();
+        Consumables consumables = new Consumables();
         boolean game = true;
         boolean combat = false;
 
@@ -48,6 +48,7 @@ public class GameProject
         System.out.println("Welcome " + player.getName() + " to the (lore shit or whatever). ");
         System.out.println("Please select a class: 1.Paladin 2.Warrior 3.Mage");
         int choice = input.nextInt();
+
         while(choice < 1 || choice > 3)
         {
             System.out.print("Invalid input, please try again: ");
@@ -77,7 +78,8 @@ public class GameProject
 
         while(game)
         {
-
+            System.out.println("You move into next room");
+            // set choices and then a combat loop
         }
     }
 
