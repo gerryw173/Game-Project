@@ -9,38 +9,14 @@ public class GameProject
 {
     public static void main(String[] args)
     {
-        //Monsters
-        String[] easyMob = {"Zombie", "Skeleton", "Bat"};
-        //Monster Stats
-        //int monsterHP = 0;
-        //int monsterDEF = 0;
-        //int monsterATK = 0;
-        //int monsterINT = 0;
-        //int monsterMana = 0;
-        /*Stats
-        int HP = 0;
-        int DEF = 0;
-        int ATK = 0;
-        int INT = 0;
-        int mana = 0;
-        int gold = 0;
-        int xp = 0;
-        */
-        //Items
-        //int sword = 0;
-        //int shield = 0;
-
-        //Consumnables
-        //int healthPot = 3;
-        //int healthPotChance = 20;
-        //int manaPot = 1;
-        //int manaPotChance = 10;
+        //Create a combat,shop, and maybe entity class
+        //clean up this driver class
 
         Scanner input = new Scanner(System.in);
         Player player = new Player();
         Consumables consumables = new Consumables();
         boolean game = true;
-        boolean combat = false;
+        //boolean combat = false;
 
         System.out.println("Welcome to Game 2.0");
         System.out.print("Please enter your name: ");

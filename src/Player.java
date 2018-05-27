@@ -20,6 +20,7 @@ public class Player
 
     public Player()
     {
+        name = "";
         HP = 20;
         DEF = 5;
         ATK = 10;
@@ -111,6 +112,20 @@ public class Player
         this.xp = xp;
     }
 
+    public void checkLevelUp()
+    {
+        if(xp >= 100)
+        {
+            System.out.println("You leveled up!");
+            levelUp();
+        }
+
+        else
+        {
+            System.out.println("Not enough xp");
+        }
+    }
+
     public void levelUp()
     {
         Scanner input = new Scanner(System.in);
@@ -156,7 +171,6 @@ public class Player
             }
 
             xp -= 100;
-
         }
 
         else
