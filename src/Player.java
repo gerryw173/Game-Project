@@ -112,6 +112,37 @@ public class Player
         this.xp = xp;
     }
 
+    public void chooseClass()
+    {
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+
+        while(choice < 1 || choice > 3)
+        {
+            System.out.print("Invalid input, please try again: ");
+            choice = input.nextInt();
+
+        }
+
+        if(choice == 1)
+        {
+            System.out.println("You chose the paladin.");
+            DEF += 2;
+        }
+
+        else if(choice == 2)
+        {
+            System.out.println("You chose the warrior");
+            ATK++;
+        }
+
+        else if(choice == 3)
+        {
+            System.out.println("You chose the mage.");
+            INT++;
+        }
+    }
+
     public void checkLevelUp()
     {
         if(xp >= 100)
@@ -223,7 +254,8 @@ public class Player
     {
         String a = "HP: " + HP + "\n" +
                 "DEF: " + DEF + "\n" +
-                "ATK: " + ATK;
+                "ATK: " + ATK + "\n" +
+                "INT: " + INT;
 
         return a;
     }

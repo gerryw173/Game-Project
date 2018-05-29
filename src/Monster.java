@@ -13,6 +13,7 @@ public class Monster
     private int monsterMagicDamage;
     private int monsterMana;
     private int loot;
+    private int xpGiven;
 
     public Monster()
     {
@@ -21,6 +22,7 @@ public class Monster
         monsterDEF = randy.nextInt(6) + 1;
         monsterATK = randy.nextInt(11) + 1;
         loot = randy.nextInt(51);
+        xpGiven = randy.nextInt(21) + 10;
     }
 
     public int getMonsterHP()
@@ -86,5 +88,10 @@ public class Monster
     public int getMonsterLoot()
     {
         return loot;
+    }
+
+    public int getXpGiven()
+    {
+        return xpGiven;
     }
 }

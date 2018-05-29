@@ -5,6 +5,7 @@ import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.util.Scanner;
 import java.util.Random;
+
 public class GameProject
 {
     public static void main(String[] args)
@@ -23,32 +24,7 @@ public class GameProject
         player.setName(input.nextLine());
         System.out.println("Welcome " + player.getName() + " to the (lore shit or whatever). ");
         System.out.println("Please select a class: 1.Paladin 2.Warrior 3.Mage");
-        int choice = input.nextInt();
 
-        while(choice < 1 || choice > 3)
-        {
-            System.out.print("Invalid input, please try again: ");
-            choice = input.nextInt();
-
-        }
-
-        if(choice == 1)
-        {
-            System.out.println("You chose the paladin.");
-            player.setDEF(6);
-        }
-
-        else if(choice == 2)
-        {
-            System.out.println("You chose the warrior");
-            player.setATK(11);
-        }
-
-        else if(choice == 3)
-        {
-            System.out.println("You chose the mage.");
-            player.setINT(6);
-        }
 
         System.out.println(player);
 
